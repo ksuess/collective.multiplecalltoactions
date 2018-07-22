@@ -13,9 +13,9 @@
   -->
   <!--<includeDependencies package="." />-->
 
+  <include package=".behaviors" />
   <include package=".browser" />
 
-  <include file="permissions.zcml" />
 
   <include file="upgrades.zcml" />
 
@@ -42,9 +42,5 @@
       name="collective.calltoaction-hiddenprofiles"
       />
 
-  <!-- -*- extra stuff goes here -*- -->
 
-    <include package=".behaviors" />
-
-        
 </configure>

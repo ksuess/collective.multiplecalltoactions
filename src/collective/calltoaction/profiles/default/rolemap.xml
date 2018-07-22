@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <rolemap>
-  <permissions>
-  <!-- -*- extra stuff goes here -*- -->
+    <permissions>
+          <permission name="collective.calltoaction.addcalltoactionviewlet"
+                      acquire="True">
+            <role name="Manager"/>
+            <role name="Site Administrator"/>
+          </permission>
 
-  </permissions>
+    </permissions>
 </rolemap>

@@ -18,4 +18,23 @@
       directory="static"
       />
 
+
+  <!-- Viewlets
+
+      -->
+      
+  <browser:viewlet
+    name="collective.calltoactionviewlet"
+    manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+    template="templates/calltoactionviewlet.pt"
+    class=".viewlets.CalltoactionViewlet"
+    layer="collective.calltoaction.interfaces.ICollectiveCalltoactionLayer"
+    permission="collective.calltoaction.addcalltoactionviewlet"
+    />
+
+
+
+
+
+
 </configure>

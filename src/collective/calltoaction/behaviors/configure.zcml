@@ -7,7 +7,8 @@
 
     <include package="plone.behavior" file="meta.zcml"/>
 
-    <!-- -*- extra stuff goes here -*- -->
+
+    <include file="permissions.zcml" />
 
     <plone:behavior
         name="collective.calltoaction.call_to_action_behavior"
@@ -18,5 +19,5 @@
         marker=".call_to_action_behavior.ICallToActionBehavior"
         />
 
-        
+
 </configure>
