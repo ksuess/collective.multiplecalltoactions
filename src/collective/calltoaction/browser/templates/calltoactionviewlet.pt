@@ -1,3 +1,17 @@
+<!-- TODO remove datagridfield.js -->
+<script
+    type="text/javascript"
+    src="++resource++collective.z3cform.datagridfield/datagridfield.js">
+</script>
 <h2>
     template calltoactionviewlet
 </h2>
+<div>
+    <ul>
+        <li tal:repeat="el context/ctos" tal:content="el/one|nothing">
+            call to action
+        </li>
+    </ul>
+
+
+</div>
