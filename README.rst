@@ -71,4 +71,4 @@ The project is licensed under the GPLv2.
 Additional Information
 ----------------------
 
-Uses plone.app.tiles https://pypi.org/project/plone.app.tiles/
+Uses datagridfield

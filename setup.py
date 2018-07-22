@@ -44,7 +44,7 @@ setup(
         'Products.GenericSetup>=1.8.2',
         'setuptools',
         'z3c.jbot',
-        'plone.app.tiles',
+        'collective.z3cform.datagridfield',
     ],
     extras_require={
         'test': [
