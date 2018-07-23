@@ -29,18 +29,32 @@ class ICalltoactionSchema(interface.Interface):
     internal link, external link, sharing
     """
 
-    one = schema.TextLine(title=u"One")
-    two = schema.TextLine(title=u"Two")
-    three = schema.TextLine(
-        title=u"Three",
-        required=False
-        )
-
-    # label = schema.TextLine(
-    #     title=u'Label',
-    #     default=u'I am the default label',
+    # one = schema.TextLine(title=u"One")
+    # two = schema.TextLine(title=u"Two")
+    # three = schema.TextLine(
+    #     title=u"Three",
+    #     required=False,
     #     )
-    #
+
+    ctolabel = schema.TextLine(
+        title=_(u'Label'),
+        required=False,
+        default=u'',
+        missing_value=u'call to action',
+        )
+    ctourl = schema.URI(
+        title=_(u'URI'),
+        required=False,
+        default=None,  # u'',
+        # missing_value=u'',
+        )
+    ctosharing = schema.Bool(
+        title=_(u'Sharing'),
+        required=False,
+        default=False,
+        missing_value=False,
+    )
+
     # directives.widget(link=ReferenceWidgetFactory)
     # link = RelationChoice(
     #     title=u'Link',
@@ -53,7 +67,11 @@ class ICalltoactionSchema(interface.Interface):
 class ICallToActionBehavior(model.Schema):
     """Call to Action behavior with one list of cto."""
 
-    # TODO: save call to action permanently
+    testurl = schema.URI(
+        title=u'URI',
+        required=False,
+        )
+
     widget('ctos', DataGridFieldFactory, allow_reorder=True)
     ctos = schema.List(
         title=_(u'List of Call to Action'),

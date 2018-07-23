@@ -8,8 +8,17 @@
 </h2>
 <div>
     <ul>
-        <li tal:repeat="el context/ctos" tal:content="el/one|nothing">
-            call to action
+        <li tal:repeat="el context/ctos">
+            <tal:url tal:condition="not:el/ctosharing">
+                <a href="#" target="_blank"
+                    tal:content="el/ctolabel|nothing"
+                    tal:attributes="href el/ctourl|nothing">
+                    call to action
+                </a>
+            </tal:url>
+            <tal:url tal:condition="el/ctosharing">
+                <span>TODO Sharing</span>
+            </tal:url>
         </li>
     </ul>
 
