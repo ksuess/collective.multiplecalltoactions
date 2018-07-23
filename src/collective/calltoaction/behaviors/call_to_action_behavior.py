@@ -12,9 +12,6 @@ from zope.interface import provider
 
 from collective.z3cform.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
-from z3c.form import field
-from z3c.form import form
-from z3c.form.form import extends
 from zope import interface
 
 # from ftw.referencewidget.sources import ReferenceObjSourceBinder
@@ -28,13 +25,6 @@ class ICalltoactionSchema(interface.Interface):
 
     internal link, external link, sharing
     """
-
-    # one = schema.TextLine(title=u"One")
-    # two = schema.TextLine(title=u"Two")
-    # three = schema.TextLine(
-    #     title=u"Three",
-    #     required=False,
-    #     )
 
     ctalabel = schema.TextLine(
         title=_(u'Label'),
@@ -80,18 +70,19 @@ class ICallToActionBehavior(model.Schema):
 @implementer(ICallToActionBehavior)
 @adapter(IDexterityContent)
 class CallToActionBehavior(object):
-    """"""
-    # def __init__(self, context):
-    #     self.context = context
-    #
-    # @property
-    # def ctas(self):
-    #     if hasattr(self.context, 'ctas'):
-    #         print("self.context.ctas {}".format(self.context.ctas))
-    #         return self.context.ctas
-    #     return None
-    #
-    # @ctas.setter
-    # def ctas(self, value):
-    #     print("value {}".format(value))
-    #     self.context.ctas = value
+    """Adapter."""
+
+    def __init__(self, context):
+        self.context = context
+
+    @property
+    def ctas(self):
+        if hasattr(self.context, 'ctas'):
+            print("get ctas: self.context.ctas {}".format(self.context.ctas))
+            return self.context.ctas
+        return None
+
+    @ctas.setter
+    def ctas(self, value):
+        print("set ctas: value {}".format(value))
+        self.context.ctas = value

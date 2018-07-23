@@ -1,14 +1,16 @@
-<!-- TODO remove datagridfield.js -->
+<!-- TODO remove datagridfield.js and css -->
+<!-- <link rel="stylesheet" type="text/css" href="++resource++collective.z3cform.datagridfield/datagridfield.css">
 <script
     type="text/javascript"
     src="++resource++collective.z3cform.datagridfield/datagridfield.js">
-</script>
+</script> -->
+
 <h2>
     template calltoactionviewlet
 </h2>
 <div>
     <ul>
-        <li tal:repeat="el context/ctas">
+        <li tal:repeat="el context/ctas|nothing">
             <tal:url tal:condition="not:el/ctasharing">
                 <a href="#" target="_blank"
                     tal:content="el/ctalabel|nothing"
