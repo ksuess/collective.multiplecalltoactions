@@ -22,14 +22,15 @@
   <!-- Viewlets
 
       -->
-      
+
   <browser:viewlet
     name="collective.calltoactionviewlet"
-    manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+    for="collective.calltoaction.interfaces.ICTAActivated"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
     template="templates/calltoactionviewlet.pt"
     class=".viewlets.CalltoactionViewlet"
     layer="collective.calltoaction.interfaces.ICollectiveCalltoactionLayer"
-    permission="collective.calltoaction.addcalltoactionviewlet"
+    permission="zope2.View"
     />
 
 

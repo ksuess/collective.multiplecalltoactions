@@ -16,7 +16,7 @@
         description="two blocks of lists of call to action"
         provides=".call_to_action_behavior.ICallToActionBehavior"
         factory=".call_to_action_behavior.CallToActionBehavior"
-        marker=".call_to_action_behavior.ICallToActionBehavior"
+        marker="collective.calltoaction.interfaces.ICTAActivated"
         />
 
 

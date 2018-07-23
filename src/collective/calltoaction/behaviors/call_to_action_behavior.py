@@ -36,19 +36,19 @@ class ICalltoactionSchema(interface.Interface):
     #     required=False,
     #     )
 
-    ctolabel = schema.TextLine(
+    ctalabel = schema.TextLine(
         title=_(u'Label'),
         required=False,
         default=u'',
         missing_value=u'call to action',
         )
-    ctourl = schema.URI(
+    ctaurl = schema.URI(
         title=_(u'URI'),
         required=False,
         default=None,  # u'',
         # missing_value=u'',
         )
-    ctosharing = schema.Bool(
+    ctasharing = schema.Bool(
         title=_(u'Sharing'),
         required=False,
         default=False,
@@ -65,15 +65,10 @@ class ICalltoactionSchema(interface.Interface):
 
 @provider(IFormFieldProvider)
 class ICallToActionBehavior(model.Schema):
-    """Call to Action behavior with one list of cto."""
+    """Call to Action behavior with one list of cta."""
 
-    testurl = schema.URI(
-        title=u'URI',
-        required=False,
-        )
-
-    widget('ctos', DataGridFieldFactory, allow_reorder=True)
-    ctos = schema.List(
+    widget('ctas', DataGridFieldFactory, allow_reorder=True)
+    ctas = schema.List(
         title=_(u'List of Call to Action'),
         required=False,
         value_type=DictRow(title=u"calltoaction", schema=ICalltoactionSchema),
@@ -90,13 +85,13 @@ class CallToActionBehavior(object):
     #     self.context = context
     #
     # @property
-    # def ctos(self):
-    #     if hasattr(self.context, 'ctos'):
-    #         print("self.context.ctos {}".format(self.context.ctos))
-    #         return self.context.ctos
+    # def ctas(self):
+    #     if hasattr(self.context, 'ctas'):
+    #         print("self.context.ctas {}".format(self.context.ctas))
+    #         return self.context.ctas
     #     return None
     #
-    # @ctos.setter
-    # def ctos(self, value):
+    # @ctas.setter
+    # def ctas(self, value):
     #     print("value {}".format(value))
-    #     self.context.ctos = value
+    #     self.context.ctas = value
