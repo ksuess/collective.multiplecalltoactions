@@ -2,6 +2,7 @@
 # coding: utf-8
 from collective.calltoaction import _
 from plone import schema
+from plone.app.z3cform.widget import LinkFieldWidget
 from plone.autoform.directives import widget
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
@@ -32,7 +33,8 @@ class ICalltoactionSchema(interface.Interface):
         default=u'',
         missing_value=u'call to action',
         )
-    ctaurl = schema.URI(
+    widget('ctaurl', LinkFieldWidget)
+    ctaurl = schema.TextLine(
         title=_(u'URI'),
         required=False,
         default=None,  # u'',

@@ -1,24 +1,14 @@
-<!-- TODO remove datagridfield.js and css -->
-<!-- <link rel="stylesheet" type="text/css" href="++resource++collective.z3cform.datagridfield/datagridfield.css">
-<script
-    type="text/javascript"
-    src="++resource++collective.z3cform.datagridfield/datagridfield.js">
-</script> -->
-
-<div id="calltoactionviewlet">
+<div id="calltoactionviewlet"
+    tal:define="ctadct view/ctasdictionary"
+    tal:condition="ctadct">
     <tal:category
-        tal:define="ctadct view/ctasdictionary"
         tal:repeat="cat ctadct">
         <div class="ctablock">
             <h3 tal:content="cat">Category</h3>
             <ul>
                 <li tal:repeat="el python:ctadct[cat]">
                     <tal:url tal:condition="not:el/ctasharing">
-                        <a href="#" target="_blank"
-                            tal:content="el/ctalabel|nothing"
-                            tal:attributes="href el/ctaurl|nothing">
-                            call to action
-                        </a>
+                        <a tal:attributes="href python:view.absolute_target_url(el['ctaurl'])" tal:content="el/ctalabel|nothing">remote url</a>
                     </tal:url>
                     <tal:url tal:condition="el/ctasharing">
                         <span>TODO Sharing</span>

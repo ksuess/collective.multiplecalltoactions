@@ -1,7 +1,21 @@
-"""todo viewlet class."""
-
+"""Viewlet class."""
+from plone import api
 from plone.app.layout.viewlets import common as base
-# from plone import api
+
+# links starting with these URL scheme should not be redirected to
+NON_REDIRECTABLE_URL_SCHEMES = [
+    'mailto:',
+    'tel:',
+    'callto:',  # nonstandard according to RFC 3966. used for skype.
+    'webdav:',
+    'caldav:'
+]
+
+# links starting with these URL scheme should not be resolved to paths
+NON_RESOLVABLE_URL_SCHEMES = NON_REDIRECTABLE_URL_SCHEMES + [
+    'file:',
+    'ftp:',
+]
 
 import logging
 logger = logging.getLogger(__name__)
@@ -49,9 +63,53 @@ class CalltoactionViewlet(base.ViewletBase):
    """
         ctas = self.context.ctas
         dct = {}
+        print(ctas)
+        if not ctas:
+            return
         for el in ctas:
             dct[el['ctacategory']] = []
         for el in ctas:
             dct[el['ctacategory']].append(el)
-        # print("ctasdictionary {}".format(dct))
+        print("ctasdictionary {}".format(dct))
         return dct
+
+
+    def _url_uses_scheme(self, schemes, url=None):
+        url = url  # or self.context.remoteUrl
+        for scheme in schemes:
+            if url.startswith(scheme):
+                return True
+        return False
+
+    def absolute_target_url(self, urlstring):
+        """Compute the absolute target URL."""
+        url = urlstring  # self.url()
+        print("*** {} {}".format(url, self._url_uses_scheme(NON_RESOLVABLE_URL_SCHEMES, url)))
+
+        if self._url_uses_scheme(NON_RESOLVABLE_URL_SCHEMES, url):
+            # For non http/https url schemes, there is no path to resolve.
+            return url
+
+        if url.startswith('.'):
+            # we just need to adapt ../relative/links, /absolute/ones work
+            # anyway -> this requires relative links to start with ./ or
+            # ../
+            context_state = self.context.restrictedTraverse(
+                '@@plone_context_state'
+            )
+            url = '/'.join([
+                context_state.canonical_object_url(),
+                url
+            ])
+        if url.startswith('${portal_url}'):
+            url = url.replace('${portal_url}', '')
+            url = '/'.join([
+                api.portal.get().absolute_url(),
+                url
+            ])
+        else:
+            if not (url.startswith('http://') or url.startswith('https://')):
+                url = self.request.physicalPathToURL(url)
+                print("physicalPathToURL {}".format(url))
+
+        return url
