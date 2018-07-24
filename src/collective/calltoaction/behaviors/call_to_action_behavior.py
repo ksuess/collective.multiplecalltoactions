@@ -62,6 +62,12 @@ class ICalltoactionSchema(interface.Interface):
 class ICallToActionBehavior(model.Schema):
     """Call to Action behavior with one list of cta."""
 
+    color = schema.TextLine(
+        title=_(u'Color'),
+        default=u"#D9017A",
+        required=False,
+    )
+
     widget('ctas', DataGridFieldFactory, allow_reorder=True)
     ctas = schema.List(
         title=_(u'List of Call to Action'),
@@ -83,11 +89,11 @@ class CallToActionBehavior(object):
     @property
     def ctas(self):
         if hasattr(self.context, 'ctas'):
-            print("get ctas: self.context.ctas {}".format(self.context.ctas))
+            # print("get ctas: self.context.ctas {}".format(self.context.ctas))
             return self.context.ctas
         return None
 
     @ctas.setter
     def ctas(self, value):
-        print("set ctas: value {}".format(value))
+        # print("set ctas: value {}".format(value))
         self.context.ctas = value

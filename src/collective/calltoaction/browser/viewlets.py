@@ -53,5 +53,5 @@ class CalltoactionViewlet(base.ViewletBase):
             dct[el['ctacategory']] = []
         for el in ctas:
             dct[el['ctacategory']].append(el)
-        print("ctasdictionary {}".format(dct))
+        # print("ctasdictionary {}".format(dct))
         return dct
