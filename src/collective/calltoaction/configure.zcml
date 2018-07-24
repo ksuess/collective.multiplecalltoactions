@@ -42,5 +42,12 @@
       name="collective.calltoaction-hiddenprofiles"
       />
 
+  <utility
+    name="collective.calltoaction.CtoCategoryVocabulary"
+    provides="zope.schema.interfaces.IVocabularyFactory"
+    component=
+        "collective.calltoaction.vocabularies.CtoCategoryVocabularyFactory"
+    />
+
 
 </configure>

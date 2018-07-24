@@ -44,6 +44,11 @@ class ICalltoactionSchema(interface.Interface):
         default=False,
         missing_value=False,
     )
+    ctacategory = schema.Choice(
+        title=_(u'Sharing'),
+        required=True,
+        vocabulary='collective.calltoaction.CtoCategoryVocabulary'
+    )
 
     # directives.widget(link=ReferenceWidgetFactory)
     # link = RelationChoice(

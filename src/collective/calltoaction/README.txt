@@ -1,2 +1,3 @@
 TODO Sharing: Siehe Viewlet calltoactionviewlet.pt
-TODO Mehr als eine cta-Liste
+TODO internal Link
+TODO Viewlet: display Categories in a defined order
