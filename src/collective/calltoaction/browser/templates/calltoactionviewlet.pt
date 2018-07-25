@@ -1,6 +1,8 @@
 <div id="calltoactionviewlet"
     tal:define="ctadct view/ctasdictionary"
-    tal:condition="ctadct">
+    tal:condition="ctadct"
+    style=""
+    tal:attributes="style view/style">
     <tal:category
         tal:repeat="cat ctadct">
         <div class="ctablock">

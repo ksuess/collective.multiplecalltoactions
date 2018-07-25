@@ -27,6 +27,10 @@ logger = logging.getLogger(__name__)
 class CalltoactionViewlet(base.ViewletBase):
     """Show Call to Actions."""
 
+    def update(self):
+        super(CalltoactionViewlet, self).update()
+        self.registry = getUtility(IRegistry)
+
     def ctasdictionary(self):
         """Get categorized ctas.
 
@@ -132,6 +136,11 @@ class CalltoactionViewlet(base.ViewletBase):
             data-services='twitter, facebook, googleplus, mail, info'
         """
         dataservices_default = ('twitter', 'mail',)
-        registry = getUtility(IRegistry)
-        shariff_dataservices = registry.get('collective.calltoaction.shariff_services', dataservices_default)
+        shariff_dataservices = self.registry.get(
+            'collective.calltoaction.shariff_services',
+            dataservices_default)
         return shariff_dataservices
+
+    def style(self):
+        color = getattr(self.context, 'color', 'transparent')
+        return 'background-color: {}'.format(color)
