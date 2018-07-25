@@ -89,6 +89,17 @@ class CallToActionBehavior(object):
         self.context = context
 
     @property
+    def color(self):
+        if hasattr(self.context, 'color'):
+            return self.context.color
+        return None
+
+    @color.setter
+    def color(self, value):
+        self.context.color = value
+
+
+    @property
     def ctas(self):
         if hasattr(self.context, 'ctas'):
             return self.context.ctas
