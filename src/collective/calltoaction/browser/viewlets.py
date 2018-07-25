@@ -3,6 +3,7 @@ from plone import api
 from plone.app.layout.viewlets import common as base
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
 
 # links starting with these URL scheme should not be redirected to
 NON_REDIRECTABLE_URL_SCHEMES = [
@@ -28,6 +29,7 @@ class CalltoactionViewlet(base.ViewletBase):
 
     def ctasdictionary(self):
         """Get categorized ctas.
+
         registry:
         [
         {'ctalabel': u'Gottesdienste', 'ctasharing': False, 'ctacategory': 'komm_vorbei', 'ctaurl': 'https://www.zhkath.ch'},
@@ -71,8 +73,21 @@ class CalltoactionViewlet(base.ViewletBase):
             dct[el['ctacategory']] = []
         for el in ctas:
             dct[el['ctacategory']].append(el)
-        return dct
+        print("ctasdictionary {}".format(dct))
 
+        factory = getUtility(
+            IVocabularyFactory,
+            'collective.calltoaction.CtoCategoryVocabulary')
+        vocabulary = factory()
+        # term = vocabulary.getTerm('value1')
+        # value, token, term =  (term.value, term.token, term.title)
+
+        result = {}
+        for k in dct:
+            result[vocabulary.getTerm(k).title] = dct[k]
+
+        print("ctasdictionary {}".format(result))
+        return result
 
     def _url_uses_scheme(self, schemes, url=None):
         url = url  # or self.context.remoteUrl
