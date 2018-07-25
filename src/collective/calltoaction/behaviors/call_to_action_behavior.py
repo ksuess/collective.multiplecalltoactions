@@ -91,11 +91,9 @@ class CallToActionBehavior(object):
     @property
     def ctas(self):
         if hasattr(self.context, 'ctas'):
-            # print("get ctas: self.context.ctas {}".format(self.context.ctas))
             return self.context.ctas
         return None
 
     @ctas.setter
     def ctas(self, value):
-        # print("set ctas: value {}".format(value))
         self.context.ctas = value

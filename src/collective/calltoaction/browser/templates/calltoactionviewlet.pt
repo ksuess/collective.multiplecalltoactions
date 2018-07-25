@@ -11,7 +11,24 @@
                         <a tal:attributes="href python:view.absolute_target_url(el['ctaurl'])" tal:content="el/ctalabel|nothing">remote url</a>
                     </tal:url>
                     <tal:url tal:condition="el/ctasharing">
-                        <span>TODO Sharing</span>
+                        <span class="sharingbutton" i18n:translate="">Sharing</span>
+                        <div class="shariff"
+                            data-services="twitter, facebook, googleplus, mail, info"
+                            data-url="http://www.example.com/my-article.html"
+                            data-theme="standard"
+                            data-orientation="horizontal"
+                            data-mail-url="mailto:"
+                            data-mail-subject="www.zhkath.ch"
+                            data-mail-body=""
+                            data-lang="de"
+                            tal:attributes="data-services view/getDataServices | string:'twitter,mail,info';
+                                            data-url context/absolute_url;
+                                            data-title context/Title;
+                                            data-mail-subject context/Title;
+                                            data-mail-body string:${context/Description}  ${context/absolute_url};"
+                                            >
+                            Sharing with Shariff
+                        </div>
                     </tal:url>
                 </li>
             </ul>
@@ -19,3 +36,20 @@
     </tal:category>
 
 </div>
+
+
+<link href="++plone++collective.calltoaction/shariff/shariff_calltoaction.css" rel="stylesheet">
+<script src="++plone++collective.calltoaction/shariff/shariff.min.js"></script>
+
+<style>
+    .shariff {
+        display: none;
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $(".sharingbutton").click(function() {
+          $(this).parent().find(".shariff").toggle("slow");
+        });
+    });
+</script>

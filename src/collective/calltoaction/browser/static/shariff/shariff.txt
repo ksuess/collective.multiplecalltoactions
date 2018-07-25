@@ -1,0 +1,3 @@
+
+$ lessc main.less main.css
+$ lessc shariff_calltoaction.less shariff_calltoaction.css

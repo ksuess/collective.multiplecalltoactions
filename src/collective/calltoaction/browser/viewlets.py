@@ -1,6 +1,8 @@
 """Viewlet class."""
 from plone import api
 from plone.app.layout.viewlets import common as base
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 # links starting with these URL scheme should not be redirected to
 NON_REDIRECTABLE_URL_SCHEMES = [
@@ -63,14 +65,12 @@ class CalltoactionViewlet(base.ViewletBase):
    """
         ctas = self.context.ctas
         dct = {}
-        print(ctas)
         if not ctas:
             return
         for el in ctas:
             dct[el['ctacategory']] = []
         for el in ctas:
             dct[el['ctacategory']].append(el)
-        print("ctasdictionary {}".format(dct))
         return dct
 
 
@@ -84,7 +84,6 @@ class CalltoactionViewlet(base.ViewletBase):
     def absolute_target_url(self, urlstring):
         """Compute the absolute target URL."""
         url = urlstring  # self.url()
-        print("*** {} {}".format(url, self._url_uses_scheme(NON_RESOLVABLE_URL_SCHEMES, url)))
 
         if self._url_uses_scheme(NON_RESOLVABLE_URL_SCHEMES, url):
             # For non http/https url schemes, there is no path to resolve.
@@ -110,6 +109,14 @@ class CalltoactionViewlet(base.ViewletBase):
         else:
             if not (url.startswith('http://') or url.startswith('https://')):
                 url = self.request.physicalPathToURL(url)
-                print("physicalPathToURL {}".format(url))
 
         return url
+
+    def getDataServices(self):
+        """<div class='shariff'
+            data-services='twitter, facebook, googleplus, mail, info'
+        """
+        dataservices_default = ('twitter', 'mail',)
+        registry = getUtility(IRegistry)
+        shariff_dataservices = registry.get('collective.calltoaction.shariff_services', dataservices_default)
+        return shariff_dataservices

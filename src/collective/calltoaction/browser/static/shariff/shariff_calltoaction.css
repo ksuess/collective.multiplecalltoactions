@@ -1,0 +1,11 @@
+@import "shariff.complete.css";
+.shariff .orientation-horizontal.button-style-standard li {
+  min-width: 100px;
+  max-width: 160px;
+}
+@media only screen and (min-width: 768px) {
+  .shariff .orientation-horizontal li {
+    min-width: 98px;
+    max-width: 160px;
+  }
+}
