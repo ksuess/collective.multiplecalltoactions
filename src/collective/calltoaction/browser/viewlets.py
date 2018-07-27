@@ -77,7 +77,7 @@ class CalltoactionViewlet(base.ViewletBase):
             dct[el['ctacategory']] = []
         for el in ctas:
             dct[el['ctacategory']].append(el)
-        print("ctasdictionary {}".format(dct))
+        # print("ctasdictionary {}".format(dct))
 
         factory = getUtility(
             IVocabularyFactory,
@@ -90,7 +90,7 @@ class CalltoactionViewlet(base.ViewletBase):
         for k in dct:
             result[vocabulary.getTerm(k).title] = dct[k]
 
-        print("ctasdictionary {}".format(result))
+        # print("ctasdictionary {}".format(result))
         return result
 
     def _url_uses_scheme(self, schemes, url=None):

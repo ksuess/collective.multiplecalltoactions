@@ -65,7 +65,7 @@ class ICallToActionBehavior(model.Schema):
     """Call to Action behavior with one list of cta."""
 
     color = schema.TextLine(
-        title=_(u'Color'),
+        title=_(u'Background Color of call to action'),
         default=u"#D9017A",
         required=False,
     )
@@ -77,6 +77,11 @@ class ICallToActionBehavior(model.Schema):
         value_type=DictRow(title=u"calltoaction", schema=ICalltoactionSchema),
         missing_value=[],
         readonly=False
+    )
+
+    model.fieldset(
+        'options',
+        fields=['color', 'ctas']
     )
 
 
