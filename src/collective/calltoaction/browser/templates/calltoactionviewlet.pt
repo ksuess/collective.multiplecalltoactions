@@ -1,5 +1,6 @@
 <div id="calltoactionviewlet"
-    tal:define="ctadct view/ctasdictionary"
+    tal:define="ctadct view/ctasdictionary;
+                portal_state context/@@plone_portal_state"
     tal:condition="ctadct"
     style=""
     tal:attributes="style view/style">
@@ -25,8 +26,8 @@
                             data-lang="de"
                             tal:attributes="data-services view/getDataServices | string:'twitter,mail,info';
                                             data-url context/absolute_url;
-                                            data-title context/Title;
-                                            data-mail-subject context/Title;
+                                            data-title string:${context/Title} - ${portal_state/portal_title};
+                                            data-mail-subject string:${context/Title} - ${portal_state/portal_title};
                                             data-mail-body string:${context/Description}  ${context/absolute_url};"
                                             >
                             Sharing with Shariff
