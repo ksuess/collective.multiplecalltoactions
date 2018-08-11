@@ -7,18 +7,18 @@
         tal:repeat="cat ctadct">
         <div class="ctablock">
             <h3 tal:content="cat">Category</h3>
-            <ul>
+            <ul class="ctalist">
                 <li tal:repeat="el python:ctadct[cat]">
                     <tal:url tal:condition="not:el/ctasharing">
                         <a tal:attributes="href python:view.absolute_target_url(el['ctaurl'])" tal:content="el/ctalabel|nothing">remote url</a>
                     </tal:url>
                     <tal:url tal:condition="el/ctasharing">
-                        <span class="sharingbutton" i18n:translate="">Sharing</span>
+                        <span class="sharingbutton" tal:content="el/ctalabel|nothing">Sharing</span>
                         <div class="shariff"
                             data-services="twitter, facebook, googleplus, mail, info"
                             data-url="http://www.example.com/my-article.html"
                             data-theme="standard"
-                            data-orientation="horizontal"
+                            data-orientation="vertical"
                             data-mail-url="mailto:"
                             data-mail-subject="www.zhkath.ch"
                             data-mail-body=""
@@ -42,6 +42,7 @@
 
 <link href="++plone++collective.calltoaction/shariff/shariff_calltoaction.css" rel="stylesheet">
 <script src="++plone++collective.calltoaction/shariff/shariff.min.js"></script>
+<!-- <script src="++plone++collective.calltoaction/shariff/shariff.js"></script> -->
 
 <style>
     .shariff {
