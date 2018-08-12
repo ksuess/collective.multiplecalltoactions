@@ -35,7 +35,7 @@ class ICalltoactionSchema(interface.Interface):
         )
     widget('ctaurl', LinkFieldWidget)
     ctaurl = schema.TextLine(
-        title=_(u'URI'),
+        title=_(u'Target of call to action'),
         required=False,
         default=None,  # u'',
         # missing_value=u'',
@@ -47,7 +47,7 @@ class ICalltoactionSchema(interface.Interface):
         missing_value=False,
     )
     ctacategory = schema.Choice(
-        title=_(u'Sharing'),
+        title=_(u'Category'),
         required=True,
         vocabulary='collective.calltoaction.CtoCategoryVocabulary'
     )
@@ -66,6 +66,7 @@ class ICallToActionBehavior(model.Schema):
 
     color = schema.TextLine(
         title=_(u'Background Color of Call to Action'),
+        description=_(u'Hexcode or name: #00aa22, magenta, yellow, ...'),
         default=u"#D9017A",
         required=False,
     )

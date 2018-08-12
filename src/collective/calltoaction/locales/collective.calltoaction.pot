@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-08-12 11:12+0000\n"
+"POT-Creation-Date: 2018-08-12 11:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,14 @@ msgstr ""
 msgid "Background Color of Call to Action"
 msgstr ""
 
+#: ../behaviors/call_to_action_behavior.py:50
+msgid "Category"
+msgstr ""
+
+#: ../behaviors/call_to_action_behavior.py:69
+msgid "Hexcode or name: #00aa22, magenta, yellow, ..."
+msgstr ""
+
 #: ../configure.zcml:29
 msgid "Installs the collective.calltoaction add-on."
 msgstr ""
@@ -29,7 +37,7 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: ../behaviors/call_to_action_behavior.py:75
+#: ../behaviors/call_to_action_behavior.py:76
 msgid "List of Call to Action"
 msgstr ""
 
@@ -38,7 +46,7 @@ msgid "Sharing"
 msgstr ""
 
 #: ../behaviors/call_to_action_behavior.py:38
-msgid "URI"
+msgid "Target of call to action"
 msgstr ""
 
 #: ../configure.zcml:38
