@@ -65,7 +65,7 @@ class ICallToActionBehavior(model.Schema):
     """Call to Action behavior with one list of cta."""
 
     color = schema.TextLine(
-        title=_(u'Background Color of call to action'),
+        title=_(u'Background Color of Call to Action'),
         default=u"#D9017A",
         required=False,
     )
