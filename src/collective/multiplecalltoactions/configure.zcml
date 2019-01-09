@@ -1,0 +1,53 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.multiplecalltoactions">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <!--
+    Be careful if you use general includeDependencies, it can have sideffects!
+    Better import explicite packages or configurations ;)
+  -->
+  <!--<includeDependencies package="." />-->
+
+  <include package=".behaviors" />
+  <include package=".browser" />
+
+
+  <include file="upgrades.zcml" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.multiplecalltoactions"
+      directory="profiles/default"
+      description="Installs the collective.multiplecalltoactions add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.multiplecalltoactions (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the collective.multiplecalltoactions add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="collective.multiplecalltoactions-hiddenprofiles"
+      />
+
+  <utility
+    name="collective.multiplecalltoactions.CtoCategoryVocabulary"
+    provides="zope.schema.interfaces.IVocabularyFactory"
+    component=
+        "collective.multiplecalltoactions.vocabularies.CtoCategoryVocabularyFactory"
+    />
+
+
+</configure>

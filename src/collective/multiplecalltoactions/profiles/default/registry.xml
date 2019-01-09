@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<registry>
+
+    <record name="collective.multiplecalltoactions.ctocategories">
+      <field type="plone.registry.field.Dict">
+        <title>Call to Action Categories</title>
+        <key_type type="plone.registry.field.TextLine" />
+        <value_type type="plone.registry.field.TextLine" />
+      </field>
+      <value purge="true">
+        <element key="komm_vorbei">Komm vorbei</element>
+        <element key="mach_mit">Mach mit</element>
+      </value>
+    </record>
+
+    <record name="collective.multiplecalltoactions.shariff_services">
+        <field type="plone.registry.field.List">
+            <title>Shariff Services</title>
+            <value_type type="plone.registry.field.ASCIILine" />
+        </field>
+        <value purge="true">
+          <element>twitter</element>
+          <element>facebook</element>
+          <element>mail</element>
+        </value>
+    </record>
+
+</registry>

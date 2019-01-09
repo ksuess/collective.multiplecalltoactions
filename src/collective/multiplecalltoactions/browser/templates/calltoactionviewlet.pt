@@ -1,0 +1,62 @@
+<div id="calltoactionviewlet"
+    tal:define="ctadct view/ctasdictionary;
+                portal_state context/@@plone_portal_state"
+    tal:condition="ctadct"
+    style=""
+    tal:attributes="style view/style">
+    <tal:category
+        tal:repeat="cat ctadct">
+        <div class="ctablock">
+            <div class="ctablockInner">
+                <ul class="ctalist">
+                    <li tal:repeat="el python:ctadct[cat]">
+                        <tal:url tal:condition="not:el/ctasharing">
+                            <a tal:attributes="href python:view.absolute_target_url(el['ctaurl'])" tal:content="el/ctalabel|nothing">remote url</a>
+                        </tal:url>
+                        <tal:url tal:condition="el/ctasharing">
+                            <span class="sharingbutton" tal:content="el/ctalabel|nothing">Sharing</span>
+                            <div class="shariff"
+                                data-services="twitter, facebook, googleplus, mail, info"
+                                data-url="http://www.example.com/my-article.html"
+                                data-theme="standard"
+                                data-orientation="vertical"
+                                data-mail-url="mailto:"
+                                data-mail-subject="www.zhkath.ch"
+                                data-mail-body=""
+                                data-lang="de"
+                                tal:attributes="data-services view/getDataServices | string:'twitter,mail,info';
+                                                data-url context/absolute_url;
+                                                data-title string:${context/Title} - ${portal_state/portal_title};
+                                                data-mail-subject string:${context/Title} - ${portal_state/portal_title};
+                                                data-mail-body string:${context/Description}  ${context/absolute_url};"
+                                                >
+                                Sharing with Shariff
+                            </div>
+                        </tal:url>
+                    </li>
+                </ul>
+
+                <h3 tal:content="cat">Category</h3>
+            </div>
+        </div>
+    </tal:category>
+
+</div>
+
+
+<link href="++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css" rel="stylesheet">
+<script src="++plone++collective.multiplecalltoactions/shariff/shariff.min.js"></script>
+<!-- <script src="++plone++collective.multiplecalltoactions/shariff/shariff.js"></script> -->
+
+<style>
+    .shariff {
+        display: none;
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $(".sharingbutton").click(function() {
+          $(this).parent().find(".shariff").toggle("slow");
+        });
+    });
+</script>
