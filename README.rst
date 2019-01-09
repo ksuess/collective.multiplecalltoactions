@@ -1,5 +1,5 @@
 =======================
-collective.calltoaction
+collective.multiplecalltoaction
 =======================
 
 Tell me what your product does
@@ -34,14 +34,14 @@ This product has been translated into
 Installation
 ------------
 
-Install collective.calltoaction by adding it to your buildout::
+Install collective.multiplecalltoaction by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        collective.calltoaction
+        collective.multiplecalltoaction
 
 
 and then running ``bin/buildout``
@@ -50,8 +50,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/collective.calltoaction/issues
-- Source Code: https://github.com/collective/collective.calltoaction
+- Issue Tracker: https://github.com/collective/collective.multiplecalltoaction/issues
+- Source Code: https://github.com/collective/collective.multiplecalltoaction
 - Documentation: https://docs.plone.org/foo/bar
 
 

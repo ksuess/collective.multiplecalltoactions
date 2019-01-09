@@ -6,8 +6,8 @@
   <configure zcml:condition="installed AccessControl.security">
 
       <permission
-        id="collective.calltoaction.addcalltoactionviewlet"
-        title="collective.calltoaction.addcalltoactionviewlet"
+        id="collective.multiplecalltoaction.addcalltoactionviewlet"
+        title="collective.multiplecalltoaction.addcalltoactionviewlet"
         />
 
   </configure>

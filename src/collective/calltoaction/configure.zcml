@@ -3,7 +3,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.calltoaction">
+    i18n_domain="collective.multiplecalltoaction">
 
   <i18n:registerTranslations directory="locales" />
 
@@ -21,32 +21,32 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="collective.calltoaction"
+      title="collective.multiplecalltoaction"
       directory="profiles/default"
-      description="Installs the collective.calltoaction add-on."
+      description="Installs the collective.multiplecalltoaction add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="collective.calltoaction (uninstall)"
+      title="collective.multiplecalltoaction (uninstall)"
       directory="profiles/uninstall"
-      description="Uninstalls the collective.calltoaction add-on."
+      description="Uninstalls the collective.multiplecalltoaction add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.uninstall"
       />
 
   <utility
       factory=".setuphandlers.HiddenProfiles"
-      name="collective.calltoaction-hiddenprofiles"
+      name="collective.multiplecalltoaction-hiddenprofiles"
       />
 
   <utility
-    name="collective.calltoaction.CtoCategoryVocabulary"
+    name="collective.multiplecalltoaction.CtoCategoryVocabulary"
     provides="zope.schema.interfaces.IVocabularyFactory"
     component=
-        "collective.calltoaction.vocabularies.CtoCategoryVocabularyFactory"
+        "collective.multiplecalltoaction.vocabularies.CtoCategoryVocabularyFactory"
     />
 
 

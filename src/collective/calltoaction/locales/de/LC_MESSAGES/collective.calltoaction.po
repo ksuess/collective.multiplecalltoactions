@@ -27,7 +27,7 @@ msgid "Hexcode or name: #00aa22, magenta, yellow, ..."
 msgstr "Hexcode oder name: #00aa22, magenta, yellow, ..."
 
 #: ../configure.zcml:29
-msgid "Installs the collective.calltoaction add-on."
+msgid "Installs the collective.multiplecalltoaction add-on."
 msgstr ""
 
 #: ../behaviors/call_to_action_behavior.py:31
@@ -47,13 +47,13 @@ msgid "Target of call to action"
 msgstr "Ziel des Call to Action"
 
 #: ../configure.zcml:38
-msgid "Uninstalls the collective.calltoaction add-on."
+msgid "Uninstalls the collective.multiplecalltoaction add-on."
 msgstr ""
 
 #: ../configure.zcml:29
-msgid "collective.calltoaction"
+msgid "collective.multiplecalltoaction"
 msgstr ""
 
 #: ../configure.zcml:38
-msgid "collective.calltoaction (uninstall)"
+msgid "collective.multiplecalltoaction (uninstall)"
 msgstr ""

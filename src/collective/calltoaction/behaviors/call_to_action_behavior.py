@@ -1,6 +1,6 @@
 """List of call-to-actions."""
 # coding: utf-8
-from collective.calltoaction import _
+from collective.multiplecalltoaction import _
 from plone import schema
 from plone.app.z3cform.widget import LinkFieldWidget
 from plone.autoform.directives import widget
@@ -49,7 +49,7 @@ class ICalltoactionSchema(interface.Interface):
     ctacategory = schema.Choice(
         title=_(u'Category'),
         required=True,
-        vocabulary='collective.calltoaction.CtoCategoryVocabulary'
+        vocabulary='collective.multiplecalltoaction.CtoCategoryVocabulary'
     )
 
     # directives.widget(link=ReferenceWidgetFactory)

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the collective.calltoaction package."""
+"""Installer for the collective.multiplecalltoaction package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -13,7 +13,7 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='collective.calltoaction',
+    name='collective.multiplecalltoaction',
     version='1.0a1',
     description="call to action blocks for page",
     long_description=long_description,
@@ -31,7 +31,7 @@ setup(
     keywords='Python Plone',
     author='Katja Suess',
     author_email='k.suess@rohberg.ch',
-    url='https://pypi.python.org/pypi/collective.calltoaction',
+    url='https://pypi.python.org/pypi/collective.multiplecalltoaction',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['collective'],

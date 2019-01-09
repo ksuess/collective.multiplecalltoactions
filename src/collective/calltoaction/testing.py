@@ -7,7 +7,7 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
-import collective.calltoaction
+import collective.multiplecalltoaction
 
 
 class CollectiveCalltoactionLayer(PloneSandboxLayer):
@@ -18,10 +18,10 @@ class CollectiveCalltoactionLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
-        self.loadZCML(package=collective.calltoaction)
+        self.loadZCML(package=collective.multiplecalltoaction)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.calltoaction:default')
+        applyProfile(portal, 'collective.multiplecalltoaction:default')
 
 
 COLLECTIVE_CALLTOACTION_FIXTURE = CollectiveCalltoactionLayer()

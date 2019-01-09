@@ -15,7 +15,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: collective.calltoaction\n"
+"Domain: collective.multiplecalltoaction\n"
 
 #: ../behaviors/call_to_action_behavior.py:68
 msgid "Background Color of Call to Action"
@@ -30,7 +30,7 @@ msgid "Hexcode or name: #00aa22, magenta, yellow, ..."
 msgstr ""
 
 #: ../configure.zcml:29
-msgid "Installs the collective.calltoaction add-on."
+msgid "Installs the collective.multiplecalltoaction add-on."
 msgstr ""
 
 #: ../behaviors/call_to_action_behavior.py:31
@@ -50,13 +50,13 @@ msgid "Target of call to action"
 msgstr ""
 
 #: ../configure.zcml:38
-msgid "Uninstalls the collective.calltoaction add-on."
+msgid "Uninstalls the collective.multiplecalltoaction add-on."
 msgstr ""
 
 #: ../configure.zcml:29
-msgid "collective.calltoaction"
+msgid "collective.multiplecalltoaction"
 msgstr ""
 
 #: ../configure.zcml:38
-msgid "collective.calltoaction (uninstall)"
+msgid "collective.multiplecalltoaction (uninstall)"
 msgstr ""

@@ -81,7 +81,7 @@ class CalltoactionViewlet(base.ViewletBase):
 
         factory = getUtility(
             IVocabularyFactory,
-            'collective.calltoaction.CtoCategoryVocabulary')
+            'collective.multiplecalltoaction.CtoCategoryVocabulary')
         vocabulary = factory()
         # term = vocabulary.getTerm('value1')
         # value, token, term =  (term.value, term.token, term.title)
@@ -137,7 +137,7 @@ class CalltoactionViewlet(base.ViewletBase):
         """
         dataservices_default = ('twitter', 'mail',)
         shariff_dataservices = self.registry.get(
-            'collective.calltoaction.shariff_services',
+            'collective.multiplecalltoaction.shariff_services',
             dataservices_default)
         return shariff_dataservices
 

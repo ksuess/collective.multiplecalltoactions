@@ -1,3 +1,3 @@
-=======================collective.calltoaction
+=======================collective.multiplecalltoaction
 =======================
 User documentation

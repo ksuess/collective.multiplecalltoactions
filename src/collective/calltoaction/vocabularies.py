@@ -15,7 +15,7 @@ def CtoCategoryVocabularyFactory(context=None):
     terms = []
     registryvalue = \
         api.portal.get_registry_record(
-            'collective.calltoaction.ctocategories') \
+            'collective.multiplecalltoaction.ctocategories') \
         or {u'default': u'Default'}
     for el in registryvalue:
         el_lower = normalizer.normalize(el)

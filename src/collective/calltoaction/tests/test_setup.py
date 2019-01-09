@@ -3,13 +3,13 @@
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from collective.calltoaction.testing import COLLECTIVE_CALLTOACTION_INTEGRATION_TESTING  # noqa
+from collective.multiplecalltoaction.testing import COLLECTIVE_CALLTOACTION_INTEGRATION_TESTING  # noqa
 
 import unittest
 
 
 class TestSetup(unittest.TestCase):
-    """Test that collective.calltoaction is properly installed."""
+    """Test that collective.multiplecalltoaction is properly installed."""
 
     layer = COLLECTIVE_CALLTOACTION_INTEGRATION_TESTING
 
@@ -19,13 +19,13 @@ class TestSetup(unittest.TestCase):
         self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_product_installed(self):
-        """Test if collective.calltoaction is installed."""
+        """Test if collective.multiplecalltoaction is installed."""
         self.assertTrue(self.installer.isProductInstalled(
-            'collective.calltoaction'))
+            'collective.multiplecalltoaction'))
 
     def test_browserlayer(self):
         """Test that ICollectiveCalltoactionLayer is registered."""
-        from collective.calltoaction.interfaces import (
+        from collective.multiplecalltoaction.interfaces import (
             ICollectiveCalltoactionLayer)
         from plone.browserlayer import utils
         self.assertIn(
@@ -42,17 +42,17 @@ class TestUninstall(unittest.TestCase):
         self.installer = api.portal.get_tool('portal_quickinstaller')
         roles_before = api.user.get_roles(TEST_USER_ID)
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.installer.uninstallProducts(['collective.calltoaction'])
+        self.installer.uninstallProducts(['collective.multiplecalltoaction'])
         setRoles(self.portal, TEST_USER_ID, roles_before)
 
     def test_product_uninstalled(self):
-        """Test if collective.calltoaction is cleanly uninstalled."""
+        """Test if collective.multiplecalltoaction is cleanly uninstalled."""
         self.assertFalse(self.installer.isProductInstalled(
-            'collective.calltoaction'))
+            'collective.multiplecalltoaction'))
 
     def test_browserlayer_removed(self):
         """Test that ICollectiveCalltoactionLayer is removed."""
-        from collective.calltoaction.interfaces import \
+        from collective.multiplecalltoaction.interfaces import \
             ICollectiveCalltoactionLayer
         from plone.browserlayer import utils
         self.assertNotIn(

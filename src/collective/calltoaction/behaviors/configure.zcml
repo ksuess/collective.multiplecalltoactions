@@ -11,12 +11,12 @@
     <include file="permissions.zcml" />
 
     <plone:behavior
-        name="collective.calltoaction.call_to_action_behavior"
+        name="collective.multiplecalltoaction.call_to_action_behavior"
         title="CallToActionBehavior"
         description="blocks of lists of call to action"
         provides=".call_to_action_behavior.ICallToActionBehavior"
         factory=".call_to_action_behavior.CallToActionBehavior"
-        marker="collective.calltoaction.interfaces.ICTAActivated"
+        marker="collective.multiplecalltoaction.interfaces.ICTAActivated"
         />
 
 

@@ -4,13 +4,13 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s collective.calltoaction -t test_example.robot --all
+#  $ bin/test -s collective.multiplecalltoaction -t test_example.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
 # 1) Start robot server:
 #
-# $ bin/robot-server --reload-path src collective.calltoaction.testing.COLLECTIVE_CALLTOACTION_ACCEPTANCE_TESTING
+# $ bin/robot-server --reload-path src collective.multiplecalltoaction.testing.COLLECTIVE_CALLTOACTION_ACCEPTANCE_TESTING
 #
 # 2) Run robot tests:
 #

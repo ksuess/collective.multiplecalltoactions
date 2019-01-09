@@ -2,18 +2,18 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.calltoaction">
+    i18n_domain="collective.multiplecalltoaction">
 
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
       directory="overrides"
-      layer="collective.calltoaction.interfaces.ICollectiveCalltoactionLayer"
+      layer="collective.multiplecalltoaction.interfaces.ICollectiveCalltoactionLayer"
       />
 
   <!-- Publish static files -->
   <plone:static
-      name="collective.calltoaction"
+      name="collective.multiplecalltoaction"
       type="plone"
       directory="static"
       />
@@ -24,12 +24,12 @@
       -->
 
   <browser:viewlet
-    name="collective.calltoactionviewlet"
-    for="collective.calltoaction.interfaces.ICTAActivated"
+    name="collective.multiplecalltoactionviewlet"
+    for="collective.multiplecalltoaction.interfaces.ICTAActivated"
     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
     template="templates/calltoactionviewlet.pt"
     class=".viewlets.CalltoactionViewlet"
-    layer="collective.calltoaction.interfaces.ICollectiveCalltoactionLayer"
+    layer="collective.multiplecalltoaction.interfaces.ICollectiveCalltoactionLayer"
     permission="zope2.View"
     />
 
