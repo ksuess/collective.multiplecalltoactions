@@ -12,7 +12,7 @@
 
     <plone:behavior
         name="collective.multiplecalltoactions.call_to_action_behavior"
-        title="CallToActionBehavior"
+        title="CallToAction Behavior"
         description="blocks of lists of call to action"
         provides=".call_to_action_behavior.ICallToActionBehavior"
         factory=".call_to_action_behavior.CallToActionBehavior"
