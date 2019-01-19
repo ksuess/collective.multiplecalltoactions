@@ -8,7 +8,7 @@
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
       directory="overrides"
-      layer="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionLayer"
+      layer="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionsLayer"
       />
 
   <!-- Publish static files -->
@@ -29,7 +29,7 @@
     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
     template="templates/calltoactionviewlet.pt"
     class=".viewlets.CalltoactionViewlet"
-    layer="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionLayer"
+    layer="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionsLayer"
     permission="zope2.View"
     />
 

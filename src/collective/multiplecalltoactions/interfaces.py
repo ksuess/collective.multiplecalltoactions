@@ -5,7 +5,7 @@ from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
-class ICollectiveCalltoactionLayer(IDefaultBrowserLayer):
+class ICollectiveCalltoactionsLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 

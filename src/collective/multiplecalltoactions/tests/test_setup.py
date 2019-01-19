@@ -24,12 +24,12 @@ class TestSetup(unittest.TestCase):
             'collective.multiplecalltoactions'))
 
     def test_browserlayer(self):
-        """Test that ICollectiveCalltoactionLayer is registered."""
+        """Test that ICollectiveCalltoactionsLayer is registered."""
         from collective.multiplecalltoactions.interfaces import (
-            ICollectiveCalltoactionLayer)
+            ICollectiveCalltoactionsLayer)
         from plone.browserlayer import utils
         self.assertIn(
-            ICollectiveCalltoactionLayer,
+            ICollectiveCalltoactionsLayer,
             utils.registered_layers())
 
 
@@ -51,10 +51,10 @@ class TestUninstall(unittest.TestCase):
             'collective.multiplecalltoactions'))
 
     def test_browserlayer_removed(self):
-        """Test that ICollectiveCalltoactionLayer is removed."""
+        """Test that ICollectiveCalltoactionsLayer is removed."""
         from collective.multiplecalltoactions.interfaces import \
-            ICollectiveCalltoactionLayer
+            ICollectiveCalltoactionsLayer
         from plone.browserlayer import utils
         self.assertNotIn(
-            ICollectiveCalltoactionLayer,
+            ICollectiveCalltoactionsLayer,
             utils.registered_layers())

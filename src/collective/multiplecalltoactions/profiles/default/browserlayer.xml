@@ -2,6 +2,6 @@
 <layers>
   <layer
       name="collective.multiplecalltoactions"
-      interface="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionLayer"
+      interface="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionsLayer"
       />
 </layers>
