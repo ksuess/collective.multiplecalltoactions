@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../behaviors/call_to_action_behavior.py:76
 msgid "List of Call to Action"
-msgstr ""
+msgstr "List of Calls to Action"
 
 #: ../behaviors/call_to_action_behavior.py:44
 msgid "Sharing"

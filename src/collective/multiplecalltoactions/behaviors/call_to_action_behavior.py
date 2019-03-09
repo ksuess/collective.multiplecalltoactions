@@ -71,7 +71,7 @@ class ICallToActionBehavior(model.Schema):
         required=False,
     )
 
-    widget('ctas', DataGridFieldFactory, allow_reorder=True)
+    widget('ctas', DataGridFieldFactory, auto_append = False, allow_reorder=True)
     ctas = schema.List(
         title=_(u'List of Call to Action'),
         required=False,
