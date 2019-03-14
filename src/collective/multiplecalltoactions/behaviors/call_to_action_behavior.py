@@ -7,13 +7,20 @@ from plone.autoform.directives import widget
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
+from z3c.form.converter import BaseDataConverter
+from z3c.form.interfaces import DISPLAY_MODE
+from z3c.form.interfaces import HIDDEN_MODE
+from z3c.form.interfaces import IDataConverter
+from z3c.form.interfaces import NO_VALUE
 from zope.component import adapter
 from zope.interface import implementer
+from zope.interface import Interface
 from zope.interface import provider
+from zope.schema.fieldproperty import FieldProperty
 
 from collective.z3cform.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield import IDataGridField
 from collective.z3cform.datagridfield import DictRow
-from zope import interface
 
 # from ftw.referencewidget.sources import ReferenceObjSourceBinder
 # from ftw.referencewidget.widget import ReferenceWidgetFactory
@@ -21,7 +28,7 @@ from zope import interface
 # from z3c.relationfield.schema import RelationChoice
 
 
-class ICalltoactionSchema(interface.Interface):
+class ICalltoactionSchema(Interface):
     """Call to action.
 
     internal link, external link, sharing
@@ -37,8 +44,8 @@ class ICalltoactionSchema(interface.Interface):
     ctaurl = schema.TextLine(
         title=_(u'Target of call to action'),
         required=False,
-        default=None,  # u'',
-        # missing_value=u'',
+        default=u'',
+        missing_value=u'',
         )
     ctasharing = schema.Bool(
         title=_(u'Sharing'),
@@ -60,6 +67,22 @@ class ICalltoactionSchema(interface.Interface):
     #     )
 
 
+@implementer(ICalltoactionSchema)
+class cta(object):
+    ctalabel = FieldProperty(ICalltoactionSchema['ctalabel'])
+    ctaurl = FieldProperty(ICalltoactionSchema['ctaurl'])
+    ctasharing = FieldProperty(ICalltoactionSchema['ctasharing'])
+    ctacategory = FieldProperty(ICalltoactionSchema['ctacategory'])
+
+class ctaList(list):
+    pass
+
+class ctaListField(schema.List):
+    """We need to have a unique class for the field list so that we
+    can apply a custom adapter."""
+    pass
+
+
 @provider(IFormFieldProvider)
 class ICallToActionBehavior(model.Schema):
     """Call to Action behavior with one list of cta."""
@@ -71,8 +94,8 @@ class ICallToActionBehavior(model.Schema):
         required=False,
     )
 
-    widget('ctas', DataGridFieldFactory, auto_append = False, allow_reorder=True)
-    ctas = schema.List(
+    widget('ctas', DataGridFieldFactory, auto_append = True, allow_reorder=True)
+    ctas = ctaListField(
         title=_(u'List of Call to Action'),
         required=False,
         value_type=DictRow(title=u"calltoaction", schema=ICalltoactionSchema),
@@ -108,9 +131,47 @@ class CallToActionBehavior(object):
     @property
     def ctas(self):
         if hasattr(self.context, 'ctas'):
+            # import pdb; pdb.set_trace()
+            print("*** getter of CallToActionBehavior")
+            print(self.context.ctas)
             return self.context.ctas
         return None
 
     @ctas.setter
     def ctas(self, value):
+        print("*** setter of CallToActionBehavior")
+        print(value)
+        # import pdb; pdb.set_trace()
         self.context.ctas = value
+
+
+
+
+@adapter(ctaListField, IDataGridField)
+@implementer(IDataConverter)
+class GridDataConverter(BaseDataConverter):
+    """Convert between the ctaList object and the widget.
+       If you are using objects, you must provide a custom converter
+    """
+
+    def toWidgetValue(self, value):
+        """Simply pass the data through with no change"""
+        rv = list()
+        print("** toWidgetValue")
+        for row in value:
+            d = dict()
+            for name, f in getFieldsInOrder(ICalltoactionSchema):
+                d[name] = getattr(row, name)
+            rv.append(d)
+        return rv
+
+    def toFieldValue(self, value):
+        rv = ctaList()
+        print("** toFieldValue")
+        for row in value:
+            d = dict()
+            for name, f in getFieldsInOrder(ICalltoactionSchema):
+                if row.get(name, NO_VALUE) != NO_VALUE:
+                    d[name] = row.get(name)
+            rv.append(cta(**d))
+        return rv

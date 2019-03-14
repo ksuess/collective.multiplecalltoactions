@@ -2,33 +2,9 @@
 collective.multiplecalltoactions
 =======================
 
-Tell me what your product does
-
-Features
---------
-
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+Show 'call to action' on pages.
+Each page can have an individual 'call to action'.
+Each page can have even more than one.
 
 
 Installation
@@ -52,23 +28,22 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.multiplecalltoactions/issues
 - Source Code: https://github.com/collective/collective.multiplecalltoactions
-- Documentation: https://docs.plone.org/foo/bar
 
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+Issue Tracker: https://github.com/collective/collective.multiplecalltoactions/issues
 
 
 License
 -------
 
-The project is licensed under the GPLv2.
+If you are making money, came back to Plone Foundation <TODO> and spend your part.
 
 
 Additional Information
 ----------------------
 
-Uses datagridfield
+Uses collective.z3cform.datagridfield
