@@ -19,22 +19,26 @@
       />
 
 
-  <!-- Viewlets
+  <!-- Viewlets      -->
 
-      -->
+  <browser:page
+      name="calltoaction"
+      for="collective.multiplecalltoactions.interfaces.ICTAActivated"
+      layer="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionsLayer"
+      permission="zope2.View"
+      class=".viewlets.CTAView"
+      template="templates/calltoactionviewlet.pt"
+      />
+
 
   <browser:viewlet
     name="collective.multiplecalltoactionsviewlet"
     for="collective.multiplecalltoactions.interfaces.ICTAActivated"
     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
-    template="templates/calltoactionviewlet.pt"
     class=".viewlets.CalltoactionViewlet"
     layer="collective.multiplecalltoactions.interfaces.ICollectiveCalltoactionsLayer"
     permission="zope2.View"
     />
-
-
-
 
 
 

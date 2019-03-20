@@ -7,3 +7,6 @@ Changelog
 
 - Initial release.
   [ksuess]
+
+- New view for use in mosaic fragment
+  [ksuess]

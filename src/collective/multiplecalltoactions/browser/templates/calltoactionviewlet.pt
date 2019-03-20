@@ -45,9 +45,9 @@
 
 
 <link href="++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css" rel="stylesheet"
-    tal:attributes="href string:${view/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css">
+    tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css">
 <script src="++plone++collective.multiplecalltoactions/shariff/shariff.min.js"
-    tal:attributes="src string:${view/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff.min.js"></script>
+    tal:attributes="src string:${context/@@plone_portal_state/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff.min.js"></script>
 
 <style>
     .shariff {

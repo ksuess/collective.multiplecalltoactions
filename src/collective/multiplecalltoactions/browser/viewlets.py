@@ -1,7 +1,7 @@
 """Viewlet class."""
 from plone import api
 from plone.app.layout.viewlets import common as base
-from plone.registry.interfaces import IRegistry
+from Products.Five import BrowserView
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 
@@ -24,12 +24,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class CalltoactionViewlet(base.ViewletBase):
-    """Show Call to Actions."""
+class CTAView(BrowserView):
+    """docstring for CTAView."""
 
     def update(self):
-        super(CalltoactionViewlet, self).update()
-        self.registry = getUtility(IRegistry)
+        super(CTAView, self).update()
 
     def ctasdictionary(self):
         """Get categorized ctas.
@@ -136,11 +135,17 @@ class CalltoactionViewlet(base.ViewletBase):
             data-services='twitter, facebook, googleplus, mail, info'
         """
         dataservices_default = ('twitter', 'mail',)
-        shariff_dataservices = self.registry.get(
-            'collective.multiplecalltoactions.shariff_services',
-            dataservices_default)
+        shariff_dataservices = api.portal.get_registry_record('collective.multiplecalltoactions.shariff_services', default=dataservices_default)
         return shariff_dataservices
 
     def style(self):
         color = getattr(self.context, 'color', 'transparent')
         return 'background-color: {}'.format(color)
+
+
+class CalltoactionViewlet(base.ViewletBase):
+    """Show Call to Actions."""
+
+    def index(self):
+        ctaview = api.content.get_view('calltoaction', self.context, self.request)
+        return ctaview()
