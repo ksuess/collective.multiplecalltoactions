@@ -131,9 +131,6 @@ class CallToActionBehavior(object):
     @property
     def ctas(self):
         if hasattr(self.context, 'ctas'):
-            # import pdb; pdb.set_trace()
-            print("*** getter of CallToActionBehavior")
-            print(self.context.ctas)
             return self.context.ctas
         return None
 

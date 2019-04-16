@@ -1,6 +1,7 @@
 """Viewlet class."""
 from plone import api
 from plone.app.layout.viewlets import common as base
+from plone.outputfilters.browser.resolveuid import uuidToURL
 from Products.Five import BrowserView
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
@@ -99,12 +100,12 @@ class CTAView(BrowserView):
                 return True
         return False
 
+    # def absolute_target_url(self, obj, attributename):
     def absolute_target_url(self, urlstring):
         """Compute the absolute target URL."""
-        url = urlstring  # self.url()
+        url = urlstring # self.url(obj, attributename)
 
         if self._url_uses_scheme(NON_RESOLVABLE_URL_SCHEMES, url):
-            # For non http/https url schemes, there is no path to resolve.
             return url
 
         if url.startswith('.'):
@@ -118,16 +119,18 @@ class CTAView(BrowserView):
                 context_state.canonical_object_url(),
                 url
             ])
-        if url.startswith('${portal_url}'):
-            url = url.replace('${portal_url}', '')
-            url = '/'.join([
-                api.portal.get().absolute_url(),
-                url
-            ])
         else:
-            if not (url.startswith('http://') or url.startswith('https://')):
-                url = self.request.physicalPathToURL(url)
-
+            if not url.startswith(('http://', 'https://')):
+                # url = self.request['SERVER_URL'] + url
+                if 'resolveuid/' in url:
+                    try:
+                        uuid = url.split("resolveuid/")[1]
+                        url = uuidToURL(uuid)
+                        print("resolveuid {}".format(url))
+                    except Exception:
+                        pass
+                else:
+                    url = api.portal.get().absolute_url() + url
         return url
 
     def getDataServices(self):
