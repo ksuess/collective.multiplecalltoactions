@@ -126,7 +126,6 @@ class CTAView(BrowserView):
                     try:
                         uuid = url.split("resolveuid/")[1]
                         url = uuidToURL(uuid)
-                        print("resolveuid {}".format(url))
                     except Exception:
                         pass
                 else:
