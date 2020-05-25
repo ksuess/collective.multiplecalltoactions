@@ -100,6 +100,7 @@ class ICallToActionBehavior(model.Schema):
         required=False,
         value_type=DictRow(title=u"calltoaction", schema=ICalltoactionSchema),
         missing_value=[],
+        default=[],
         readonly=False
     )
 
