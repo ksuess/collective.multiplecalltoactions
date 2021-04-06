@@ -18,9 +18,9 @@ from zope.interface import Interface
 from zope.interface import provider
 from zope.schema.fieldproperty import FieldProperty
 
-from collective.z3cform.datagridfield import DataGridFieldFactory
-from collective.z3cform.datagridfield import IDataGridField
-from collective.z3cform.datagridfield import DictRow
+from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.interfaces import IDataGridField
+from collective.z3cform.datagridfield.row import DictRow
 
 # from ftw.referencewidget.sources import ReferenceObjSourceBinder
 # from ftw.referencewidget.widget import ReferenceWidgetFactory
