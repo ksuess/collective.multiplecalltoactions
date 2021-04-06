@@ -1,10 +1,15 @@
-=======================
+================================
 collective.multiplecalltoactions
-=======================
+================================
 
-Show 'call to action' on pages.
-Each page can have an individual 'call to action'.
-Each page can have even more than one.
+Show 'call to action's on pages.
+Each page can have multiple inidvidual 'call to action's.
+
+.. image:: .docs/cta_rendering.png
+    :alt: call to actions, rendering
+
+.. image:: .docs/cta_editing.png
+    :alt: call to actions, editing
 
 
 Installation
