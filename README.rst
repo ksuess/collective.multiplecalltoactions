@@ -5,10 +5,10 @@ collective.multiplecalltoactions
 Show 'call to action's on pages.
 Each page can have multiple inidvidual 'call to action's.
 
-.. image:: .docs/cta_rendering.png
+.. image:: ./docs/cta_rendering.png
     :alt: call to actions, rendering
 
-.. image:: .docs/cta_editing.png
+.. image:: ./docs/cta_editing.png
     :alt: call to actions, editing
 
 
