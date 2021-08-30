@@ -28,6 +28,11 @@ Install collective.multiplecalltoactions by adding it to your buildout::
 and then running ``bin/buildout``
 
 
+Usage
+-----
+
+Categories can be customized via registry entry ctocategories
+
 Contribute
 ----------
 
