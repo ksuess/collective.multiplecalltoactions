@@ -41,23 +41,26 @@
         </div>
     </tal:category>
 
+    <link href="++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css" rel="stylesheet"
+        tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css">
+    <script defer src="++plone++collective.multiplecalltoactions/shariff/shariff.min.js"
+        tal:attributes="src string:${context/@@plone_portal_state/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff.min.js"></script>
+
+    <style>
+        .shariff {
+            display: none;
+        }
+    </style>
+    <script>
+        var $ = jQuery.noConflict();
+        // $ is now an alias to the jQuery function; creating the new alias is optional.
+        
+        $(document).ready(function() {
+            $(".sharingbutton").click(function() {
+                $(this).parent().find(".shariff").toggle("slow");
+            });
+        });
+    </script>
+
 </div>
 
-
-<link href="++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css" rel="stylesheet"
-    tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff_calltoaction.css">
-<script defer src="++plone++collective.multiplecalltoactions/shariff/shariff.min.js"
-    tal:attributes="src string:${context/@@plone_portal_state/navigation_root_url}/++plone++collective.multiplecalltoactions/shariff/shariff.min.js"></script>
-
-<style>
-    .shariff {
-        display: none;
-    }
-</style>
-<script>
-    $(document).ready(function() {
-        $(".sharingbutton").click(function() {
-          $(this).parent().find(".shariff").toggle("slow");
-        });
-    });
-</script>
