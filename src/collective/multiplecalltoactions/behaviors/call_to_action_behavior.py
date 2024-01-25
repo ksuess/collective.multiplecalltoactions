@@ -35,33 +35,33 @@ class ICalltoactionSchema(Interface):
     """
 
     ctalabel = schema.TextLine(
-        title=_(u'Label'),
+        title=_('Label'),
         required=False,
-        default=u'',
-        missing_value=u'call to action',
+        default='',
+        missing_value='call to action',
         )
     widget('ctaurl', LinkFieldWidget)
     ctaurl = schema.TextLine(
-        title=_(u'Target of call to action'),
+        title=_('Target of call to action'),
         required=False,
-        default=u'',
-        missing_value=u'',
+        default='',
+        missing_value='',
         )
     ctasharing = schema.Bool(
-        title=_(u'Sharing'),
+        title=_('Sharing'),
         required=False,
         default=False,
         missing_value=False,
     )
     ctacategory = schema.Choice(
-        title=_(u'Category'),
+        title=_('Category'),
         required=True,
         vocabulary='collective.multiplecalltoactions.CtoCategoryVocabulary'
     )
 
     # directives.widget(link=ReferenceWidgetFactory)
     # link = RelationChoice(
-    #     title=u'Link',
+    #     title='Link',
     #     source=ReferenceObjSourceBinder(),
     #     required=False,
     #     )
@@ -88,17 +88,20 @@ class ICallToActionBehavior(model.Schema):
     """Call to Action behavior with one list of cta."""
 
     color = schema.TextLine(
-        title=_(u'Background Color of Call to Action'),
-        description=_(u'Hexcode or name: #00aa22, magenta, yellow, ...'),
-        default=u"#D9017A",
+        title=_('Background Color of Call to Action'),
+        description=_('Hexcode or name: #00aa22, magenta, yellow, ...'),
+        default="#D9017A",
         required=False,
     )
 
-    widget('ctas', DataGridFieldFactory, auto_append = True, allow_reorder=True)
+    widget('ctas', DataGridFieldFactory, auto_append=True, allow_reorder=True)
     ctas = ctaListField(
-        title=_(u'List of Call to Action'),
+        title=_('List of Call to Action'),
         required=False,
-        value_type=DictRow(title=u"calltoaction", schema=ICalltoactionSchema),
+        value_type=DictRow(
+            title=_("calltoaction", "Call to action"),
+            schema=ICalltoactionSchema
+            ),
         missing_value=[],
         default=[],
         readonly=False

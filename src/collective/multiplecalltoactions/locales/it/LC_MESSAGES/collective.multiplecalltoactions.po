@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-09-14 13:03+0000\n"
+"POT-Creation-Date: 2024-01-25 14:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "Language-Code: it\n"
 "Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
@@ -40,7 +40,7 @@ msgstr "List of Calls to Action"
 
 #: ../behaviors/call_to_action_behavior.py:51
 msgid "Sharing"
-msgstr ""
+msgstr "Diviso"
 
 #: ../behaviors/call_to_action_behavior.py:45
 msgid "Target of call to action"
@@ -49,6 +49,11 @@ msgstr "Obiettivo del Call to Action"
 #: ../configure.zcml:38
 msgid "Uninstalls the collective.multiplecalltoactions add-on."
 msgstr ""
+
+#. Default: "Call to action"
+#: ../behaviors/call_to_action_behavior.py:102
+msgid "calltoaction"
+msgstr "Chiamare all'azione"
 
 #: ../configure.zcml:29
 msgid "collective.multiplecalltoactions"

@@ -36,12 +36,12 @@ class CTAView(BrowserView):
 
         registry:
         [
-        {'ctalabel': u'Gottesdienste', 'ctasharing': False, 'ctacategory': 'komm_vorbei', 'ctaurl': 'https://www.zhkath.ch'},
-        {'ctalabel': u'Orte der Ruhe', 'ctasharing': False, 'ctacategory': 'komm_vorbei', 'ctaurl': 'https://www.zhkath.ch'},
-        {'ctalabel': u'Veranstaltungen', 'ctasharing': False, 'ctacategory': 'mach_mit', 'ctaurl': 'https://www.zhkath.ch'},
-        {'ctalabel': u'Freiwilligenarbeit', 'ctasharing': False, 'ctacategory': 'mach_mit', 'ctaurl': 'https://www.zhkath.ch'},
-        {'ctalabel': u'Kurse', 'ctasharing': False, 'ctacategory': 'mach_mit', 'ctaurl': 'https://www.zhkath.ch'},
-        {'ctalabel': u'Sharing', 'ctasharing': True, 'ctacategory': 'mach_mit', 'ctaurl': None}]
+        {'ctalabel': 'Gottesdienste', 'ctasharing': False, 'ctacategory': 'komm_vorbei', 'ctaurl': 'https://www.zhkath.ch'},
+        {'ctalabel': 'Orte der Ruhe', 'ctasharing': False, 'ctacategory': 'komm_vorbei', 'ctaurl': 'https://www.zhkath.ch'},
+        {'ctalabel': 'Veranstaltungen', 'ctasharing': False, 'ctacategory': 'mach_mit', 'ctaurl': 'https://www.zhkath.ch'},
+        {'ctalabel': 'Freiwilligenarbeit', 'ctasharing': False, 'ctacategory': 'mach_mit', 'ctaurl': 'https://www.zhkath.ch'},
+        {'ctalabel': 'Kurse', 'ctasharing': False, 'ctacategory': 'mach_mit', 'ctaurl': 'https://www.zhkath.ch'},
+        {'ctalabel': 'Sharing', 'ctasharing': True, 'ctacategory': 'mach_mit', 'ctaurl': None}]
 
         returns
         {'komm_vorbei': [{'ctacategory': 'komm_vorbei',
