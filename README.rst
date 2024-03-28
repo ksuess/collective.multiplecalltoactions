@@ -50,7 +50,7 @@ Issue Tracker: https://github.com/collective/collective.multiplecalltoactions/is
 License
 -------
 
-If you are making money, came back to Plone Foundation <TODO> and spend your part.
+If you are making money, came back to Plone Foundation and spend your part.
 
 
 Additional Information
