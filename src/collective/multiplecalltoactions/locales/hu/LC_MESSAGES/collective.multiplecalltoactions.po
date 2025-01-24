@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-01-25 14:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language-Code: hu\n"
+"Language-Name: Hungarian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: rohberg.zhkath\n"
+
+msgid "Background Color of Call to Action"
+msgstr "A cselekvésre ösztönzés háttérszíne"
+
+msgid "Category"
+msgstr "Kategória"
+
+msgid "Hexcode or name: #00aa22, magenta, yellow, ..."
+msgstr "Hexakód vagy név: #00aa22, magenta, yellow, ..."
+
+msgid "Installs the collective.multiplecalltoactions add-on."
+msgstr "A collective.multiplecalltoactions bővítmény telepítése."
+
+msgid "Label"
+msgstr "Címke"
+
+msgid "List of Call to Action"
+msgstr "Cselekvésre ösztönző lista"
+
+msgid "Sharing"
+msgstr "Megosztás"
+
+msgid "Target of call to action"
+msgstr "A cselekvésre ösztönzés célja"
+
+msgid "Uninstalls the collective.multiplecalltoactions add-on."
+msgstr "A collective.multiplecalltoactions bővítmény eltávolítása."
+
+msgid "calltoaction"
+msgstr "cselekvésre ösztönzés"
+
+msgid "collective.multiplecalltoactions"
+msgstr "collective.multiplecalltoactions"
+
+msgid "collective.multiplecalltoactions (uninstall)"
+msgstr "collective.multiplecalltoactions (eltávolítás)"

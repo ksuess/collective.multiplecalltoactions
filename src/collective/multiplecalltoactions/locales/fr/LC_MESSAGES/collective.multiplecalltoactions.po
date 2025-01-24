@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-01-25 14:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: rohberg.zhkath\n"
+
+msgid "Background Color of Call to Action"
+msgstr "Couleur de fond de l'appel à l'action"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Hexcode or name: #00aa22, magenta, yellow, ..."
+msgstr "Code hexadécimal ou nom : #00aa22, magenta, yellow, ..."
+
+msgid "Installs the collective.multiplecalltoactions add-on."
+msgstr "Installe le module complémentaire collective.multiplecalltoactions."
+
+msgid "Label"
+msgstr "Étiquette"
+
+msgid "List of Call to Action"
+msgstr "Liste des appels à l'action"
+
+msgid "Sharing"
+msgstr "Partage"
+
+msgid "Target of call to action"
+msgstr "Cible de l'appel à l'action"
+
+msgid "Uninstalls the collective.multiplecalltoactions add-on."
+msgstr "Désinstalle le module complémentaire collective.multiplecalltoactions."
+
+msgid "calltoaction"
+msgstr "appel à l'action"
+
+msgid "collective.multiplecalltoactions"
+msgstr "collective.multiplecalltoactions"
+
+msgid "collective.multiplecalltoactions (uninstall)"
+msgstr "collective.multiplecalltoactions (désinstallation)"
