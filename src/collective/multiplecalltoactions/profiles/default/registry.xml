@@ -19,7 +19,6 @@
             <value_type type="plone.registry.field.ASCIILine" />
         </field>
         <value purge="true">
-          <element>twitter</element>
           <element>facebook</element>
           <element>mail</element>
         </value>
