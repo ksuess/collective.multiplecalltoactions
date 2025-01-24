@@ -137,7 +137,10 @@ class CTAView(BrowserView):
             data-services='twitter, facebook, googleplus, mail, info'
         """
         dataservices_default = ('twitter', 'mail',)
-        shariff_dataservices = api.portal.get_registry_record('collective.multiplecalltoactions.shariff_services', default=dataservices_default)
+        shariff_dataservices = api.portal.get_registry_record(
+            'collective.multiplecalltoactions.shariff_services',
+            default=dataservices_default
+            )
         return shariff_dataservices
 
     def style(self):
