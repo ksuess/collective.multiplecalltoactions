@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../behaviors/call_to_action_behavior.py:38
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #: ../behaviors/call_to_action_behavior.py:99
 msgid "List of Call to Action"
